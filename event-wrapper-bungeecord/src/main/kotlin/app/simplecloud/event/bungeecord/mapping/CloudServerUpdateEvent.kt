@@ -1,0 +1,27 @@
+package app.simplecloud.event.bungeecord.mapping
+
+import app.simplecloud.controller.shared.server.Server
+import app.simplecloud.controller.shared.time.ProtoBufTimestamp
+import app.simplecloud.event.shared.CloudServerUpdateEvent
+import build.buf.gen.simplecloud.controller.v1.ServerUpdateEvent
+import java.time.LocalDateTime
+
+class CloudServerUpdateEvent(private val message: ServerUpdateEvent) : CloudBungeecordEvent<ServerUpdateEvent>(),
+    CloudServerUpdateEvent {
+
+    override fun getFrom(): Server {
+        return Server.fromDefinition(message.serverBefore)
+    }
+
+    override fun getTo(): Server {
+        return Server.fromDefinition(message.serverAfter)
+    }
+
+    override fun getUpdatedAt(): LocalDateTime {
+        return ProtoBufTimestamp.toLocalDateTime(message.updatedAt)
+    }
+
+    override fun getPayload(): ServerUpdateEvent {
+        return message
+    }
+}

@@ -3,7 +3,6 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
     repositories {
         mavenCentral()
-        mavenLocal()
         gradlePluginPortal()
     }
 }
@@ -15,4 +14,4 @@ plugins {
 
 rootProject.name = "event-wrapper"
 
-include("event-wrapper-shared")
+include("event-wrapper-shared", "event-wrapper-velocity", "event-wrapper-bungeecord", "event-wrapper-paper")
