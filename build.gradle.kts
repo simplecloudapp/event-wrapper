@@ -9,7 +9,7 @@ plugins {
 }
 
 allprojects {
-    group = "app.simplecloud.template"
+    group = "app.simplecloud.event"
     version = "0.0.1-EXPERIMENTAL"
 
     repositories {

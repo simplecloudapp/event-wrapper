@@ -13,6 +13,6 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
 }
 
-rootProject.name = "template-gradle"
+rootProject.name = "event-wrapper"
 
-include("template-gradle-main", "template-gradle-shared")
+include("event-wrapper-shared")
