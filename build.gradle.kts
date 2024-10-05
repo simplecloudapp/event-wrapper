@@ -23,7 +23,7 @@ allprojects {
 
 subprojects {
     apply(plugin = "org.jetbrains.kotlin.jvm")
-    apply(plugin = "com.github.johnrengelman.shadow")
+    apply(plugin = "com.gradleup.shadow")
     apply(plugin = "maven-publish")
 
     dependencies {
@@ -52,11 +52,19 @@ subprojects {
     }
 
     tasks.named("shadowJar", ShadowJar::class) {
-        mergeServiceFiles()
+        dependsOn("processResources")
+        dependencies {
+            include(project(":event-wrapper-shared"))
+        }
         archiveFileName.set("${project.name}.jar")
     }
 
     tasks.test {
         useJUnitPlatform()
+    }
+
+    tasks.processResources {
+        expand("version" to project.version,
+            "name" to project.name)
     }
 }

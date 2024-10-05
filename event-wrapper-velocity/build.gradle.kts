@@ -1,6 +1,10 @@
 dependencies {
-    implementation(project(":event-wrapper-shared"))
-    implementation(libs.velocity)
+    api(project(":event-wrapper-shared"))
+    compileOnly(libs.velocity)
+}
+
+tasks.named("compileKotlin") {
+    dependsOn("generateBuildConfig")
 }
 
 tasks.register("generateBuildConfig") {

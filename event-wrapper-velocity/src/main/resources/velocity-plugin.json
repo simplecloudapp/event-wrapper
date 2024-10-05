@@ -1,0 +1,10 @@
+{
+  "id": "${name}",
+  "name": "${name}",
+  "version": "${version}",
+  "authors": [
+    "daviidooo"
+  ],
+  "dependencies": [],
+  "main": "app.simplecloud.event.velocity.VelocityEventWrapperPlugin"
+}

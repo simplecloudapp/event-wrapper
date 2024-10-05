@@ -1,10 +1,10 @@
 [versions]
 kotlin = "2.0.20"
 kotlinCoroutines = "1.4.2"
-shadow = "8.1.1"
+shadow = "8.3.3"
 log4j = "2.20.0"
 simpleCloudProtoSpecs = "1.4.1.1.20241001163139.58018cb317ed"
-simpleCloudPubSub = "1.0.3"
+simpleCloudPubSub = "1.0.4"
 simpleCloudController = "0.0.28-EXPERIMENTAL"
 velocity = "3.4.0-SNAPSHOT"
 bungeecord = "1.20-R0.2"
@@ -35,4 +35,4 @@ log4j = [
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow" }
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }

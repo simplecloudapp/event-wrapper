@@ -15,7 +15,7 @@ import com.velocitypowered.api.proxy.ProxyServer
     authors = ["daviidooo"],
     description = "An pubsub wrapper for listening to simplecloud events"
 )
-class VelocityEventWrapperPlugin(@Inject private val server: ProxyServer) {
+class VelocityEventWrapperPlugin @Inject constructor(server: ProxyServer) {
     private val wrapper = VelocityCloudEventWrapper(server)
 
     @Subscribe
