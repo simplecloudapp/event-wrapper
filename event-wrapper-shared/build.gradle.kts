@@ -1,5 +1,5 @@
 dependencies {
-    api(libs.simpleCloudPubSub)
-    api(libs.simpleCloudProtoSpecs)
-    api(libs.simpleCloudController)
+    api(libs.simplecloud.pubsub)
+    api(libs.simplecloud.protospecs)
+    api(libs.simplecloud.controller)
 }

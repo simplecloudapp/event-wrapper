@@ -1,37 +1,23 @@
 [versions]
 kotlin = "2.0.20"
-kotlinCoroutines = "1.4.2"
 shadow = "8.3.3"
-log4j = "2.20.0"
-simpleCloudProtoSpecs = "1.4.1.1.20241001163139.58018cb317ed"
-simpleCloudPubSub = "1.0.4"
-simpleCloudController = "0.0.28-EXPERIMENTAL"
+simplecloud-protospecs = "1.4.1.1.20241001163139.58018cb317ed"
+simplecloud-pubsub = "1.0.4"
+simplecloud-controller = "0.0.28-EXPERIMENTAL"
 velocity = "3.4.0-SNAPSHOT"
 bungeecord = "1.20-R0.2"
 paper = "1.21.1-R0.1-SNAPSHOT"
 
 [libraries]
-kotlinJvm = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
-kotlinTest = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlin-jvm = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 
-simpleCloudProtoSpecs = { module = "build.buf.gen:simplecloud_proto-specs_grpc_kotlin", version.ref = "simpleCloudProtoSpecs" }
-simpleCloudPubSub = { module = "app.simplecloud:simplecloud-pubsub", version.ref = "simpleCloudPubSub" }
-simpleCloudController = { module = "app.simplecloud.controller:controller-shared", version.ref = "simpleCloudController" }
+simplecloud-protospecs = { module = "build.buf.gen:simplecloud_proto-specs_grpc_kotlin", version.ref = "simplecloud-protospecs" }
+simplecloud-pubsub = { module = "app.simplecloud:simplecloud-pubsub", version.ref = "simplecloud-pubsub" }
+simplecloud-controller = { module = "app.simplecloud.controller:controller-shared", version.ref = "simplecloud-controller" }
 velocity = { module = "com.velocitypowered:velocity-api", version.ref = "velocity"}
 bungeecord = { module = "net.md-5:bungeecord-api", version.ref = "bungeecord" }
 paper = { module = "io.papermc.paper:paper-api", version.ref = "paper"}
-
-log4jCore = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4j" }
-log4jApi = { module = "org.apache.logging.log4j:log4j-api", version.ref = "log4j" }
-log4jSlf4j = { module = "org.apache.logging.log4j:log4j-slf4j-impl", version.ref = "log4j" }
-
-
-[bundles]
-log4j = [
-    "log4jCore",
-    "log4jApi",
-    "log4jSlf4j"
-]
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

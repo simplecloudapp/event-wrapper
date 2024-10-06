@@ -1,4 +1,4 @@
 dependencies {
-    implementation(project(":event-wrapper-shared"))
+    api(project(":event-wrapper-shared"))
     implementation(libs.bungeecord)
 }
