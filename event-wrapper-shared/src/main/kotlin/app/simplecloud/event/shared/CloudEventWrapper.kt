@@ -11,8 +11,8 @@ abstract class CloudEventWrapper {
 
     private val client =
         PubSubClient(
-            System.getenv("PUBSUB_HOST"),
-            System.getenv("PUBSUB_PORT").toInt(),
+            System.getenv("CONTROLLER_PUBSUB_HOST"),
+            System.getenv("CONTROLLER_PUBSUB_PORT").toInt(),
             AuthCallCredentials(System.getenv("CONTROLLER_SECRET"))
         )
 
