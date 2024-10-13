@@ -1,0 +1,5 @@
+name: ${name}
+version: ${version}
+main: app.simplecloud.event.paper.PaperEventWrapperPlugin
+description: Event wrapper for SimpleCloud v3
+api-version: '1.21.1'

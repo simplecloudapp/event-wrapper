@@ -10,22 +10,25 @@ plugins {
 
 allprojects {
     group = "app.simplecloud.event"
-    version = "0.0.1-EXPERIMENTAL"
+    version = "0.0.1"
 
     repositories {
         mavenCentral()
+        mavenLocal()
         maven("https://buf.build/gen/maven")
+        maven("https://repo.papermc.io/repository/maven-public/")
+        maven("https://oss.sonatype.org/content/repositories/snapshots")
     }
 }
 
 subprojects {
     apply(plugin = "org.jetbrains.kotlin.jvm")
-    apply(plugin = "com.github.johnrengelman.shadow")
+    apply(plugin = "com.gradleup.shadow")
     apply(plugin = "maven-publish")
 
     dependencies {
-        testImplementation(rootProject.libs.kotlinTest)
-        implementation(rootProject.libs.kotlinJvm)
+        testImplementation(rootProject.libs.kotlin.test)
+        implementation(rootProject.libs.kotlin.jvm)
     }
 
     publishing {
@@ -37,23 +40,30 @@ subprojects {
     }
 
     java {
-        toolchain.languageVersion.set(JavaLanguageVersion.of(22))
+        toolchain.languageVersion.set(JavaLanguageVersion.of(21))
     }
 
     kotlin {
-        jvmToolchain(22)
+        jvmToolchain(21)
         compilerOptions {
             apiVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_2_0)
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_22)
         }
     }
 
     tasks.named("shadowJar", ShadowJar::class) {
-        mergeServiceFiles()
+        dependsOn("processResources")
+        dependencies {
+            include(project(":event-wrapper-shared"))
+        }
         archiveFileName.set("${project.name}.jar")
     }
 
     tasks.test {
         useJUnitPlatform()
+    }
+
+    tasks.processResources {
+        expand("version" to project.version,
+            "name" to project.name)
     }
 }
