@@ -1,7 +1,7 @@
 package app.simplecloud.event.velocity.mapping
 
 import app.simplecloud.controller.shared.server.Server
-import app.simplecloud.controller.shared.time.ProtoBufTimestamp
+import app.simplecloud.droplet.api.time.ProtobufTimestamp
 import app.simplecloud.event.shared.CloudServerStopEvent
 import build.buf.gen.simplecloud.controller.v1.ServerStopCause
 import build.buf.gen.simplecloud.controller.v1.ServerStopEvent
@@ -30,6 +30,6 @@ class CloudServerStopEvent(private val payload: ServerStopEvent) : CloudServerSt
     }
 
     override fun getStoppedAt(): LocalDateTime {
-        return ProtoBufTimestamp.toLocalDateTime(payload.stoppedAt)
+        return ProtobufTimestamp.toLocalDateTime(payload.stoppedAt)
     }
 }

@@ -1,7 +1,6 @@
 package app.simplecloud.event.shared
 
 import app.simplecloud.controller.shared.server.Server
-import app.simplecloud.controller.shared.time.ProtoBufTimestamp
 import build.buf.gen.simplecloud.controller.v1.ServerStartCause
 import build.buf.gen.simplecloud.controller.v1.ServerStartEvent
 import java.time.LocalDateTime
