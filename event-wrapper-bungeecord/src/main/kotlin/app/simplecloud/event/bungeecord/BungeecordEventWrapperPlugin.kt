@@ -5,13 +5,13 @@ import net.md_5.bungee.api.plugin.Plugin
 
 class BungeecordEventWrapperPlugin : Plugin() {
 
-    private lateinit var wrapper: BungeecordEventWrapper
+    private val wrapper: BungeecordEventWrapper = BungeecordEventWrapper(ProxyServer.getInstance())
 
     override fun onEnable() {
-        wrapper = BungeecordEventWrapper(ProxyServer.getInstance())
+        wrapper.initialize()
     }
 
     override fun onDisable() {
-
+        wrapper.shutdown()
     }
 }

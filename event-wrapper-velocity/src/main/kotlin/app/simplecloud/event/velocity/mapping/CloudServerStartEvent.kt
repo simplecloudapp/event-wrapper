@@ -1,7 +1,7 @@
 package app.simplecloud.event.velocity.mapping
 
 import app.simplecloud.controller.shared.server.Server
-import app.simplecloud.controller.shared.time.ProtoBufTimestamp
+import app.simplecloud.droplet.api.time.ProtobufTimestamp
 import app.simplecloud.event.shared.CloudServerStartEvent
 import build.buf.gen.simplecloud.controller.v1.ServerStartCause
 import build.buf.gen.simplecloud.controller.v1.ServerStartEvent
@@ -25,6 +25,6 @@ class CloudServerStartEvent(private val payload: ServerStartEvent) : CloudServer
     }
 
     override fun getStartedAt(): LocalDateTime {
-        return ProtoBufTimestamp.toLocalDateTime(payload.startedAt)
+        return ProtobufTimestamp.toLocalDateTime(payload.startedAt)
     }
 }

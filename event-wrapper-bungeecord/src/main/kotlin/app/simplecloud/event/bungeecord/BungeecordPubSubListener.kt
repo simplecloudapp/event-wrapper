@@ -25,6 +25,7 @@ class BungeecordPubSubListener<T : Message>(private val server: ProxyServer) : C
     }
 
     override fun fire(event: CloudBungeecordEvent<*>) {
+        println("fire event $event")
         server.pluginManager.callEvent(event)
     }
 }

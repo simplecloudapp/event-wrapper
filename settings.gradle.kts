@@ -15,3 +15,4 @@ plugins {
 rootProject.name = "event-wrapper"
 
 include("event-wrapper-shared", "event-wrapper-velocity", "event-wrapper-bungeecord", "event-wrapper-paper")
+include("event-wrapper-test")

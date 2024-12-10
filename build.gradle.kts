@@ -22,6 +22,7 @@ allprojects {
         maven("https://buf.build/gen/maven")
         maven("https://repo.papermc.io/repository/maven-public/")
         maven("https://oss.sonatype.org/content/repositories/snapshots")
+        maven("https://repo.simplecloud.app/snapshots")
     }
 }
 

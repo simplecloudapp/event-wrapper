@@ -1,7 +1,7 @@
 package app.simplecloud.event.velocity.mapping
 
 import app.simplecloud.controller.shared.server.Server
-import app.simplecloud.controller.shared.time.ProtoBufTimestamp
+import app.simplecloud.droplet.api.time.ProtobufTimestamp
 import app.simplecloud.event.shared.CloudServerUpdateEvent
 import build.buf.gen.simplecloud.controller.v1.ServerUpdateEvent
 import java.time.LocalDateTime
@@ -24,7 +24,7 @@ class CloudServerUpdateEvent(private val payload: ServerUpdateEvent) : CloudServ
     }
 
     override fun getUpdatedAt(): LocalDateTime {
-        return ProtoBufTimestamp.toLocalDateTime(payload.updatedAt)
+        return ProtobufTimestamp.toLocalDateTime(payload.updatedAt)
     }
 
 }

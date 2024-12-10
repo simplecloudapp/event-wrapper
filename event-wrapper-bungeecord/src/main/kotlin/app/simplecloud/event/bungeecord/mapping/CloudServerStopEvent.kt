@@ -1,7 +1,7 @@
 package app.simplecloud.event.bungeecord.mapping
 
 import app.simplecloud.controller.shared.server.Server
-import app.simplecloud.controller.shared.time.ProtoBufTimestamp
+import app.simplecloud.droplet.api.time.ProtobufTimestamp
 import app.simplecloud.event.shared.CloudServerStopEvent
 import build.buf.gen.simplecloud.controller.v1.ServerStopCause
 import build.buf.gen.simplecloud.controller.v1.ServerStopEvent
@@ -22,7 +22,7 @@ class CloudServerStopEvent(private val message: ServerStopEvent) : CloudBungeeco
     }
 
     override fun getStoppedAt(): LocalDateTime {
-        return ProtoBufTimestamp.toLocalDateTime(message.stoppedAt)
+        return ProtobufTimestamp.toLocalDateTime(message.stoppedAt)
     }
 
     override fun getPayload(): ServerStopEvent {

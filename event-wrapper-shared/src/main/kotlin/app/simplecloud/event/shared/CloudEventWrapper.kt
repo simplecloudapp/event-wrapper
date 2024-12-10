@@ -1,6 +1,6 @@
 package app.simplecloud.event.shared
 
-import app.simplecloud.controller.shared.auth.AuthCallCredentials
+import app.simplecloud.droplet.api.auth.AuthCallCredentials
 import app.simplecloud.pubsub.PubSubClient
 import build.buf.gen.simplecloud.controller.v1.ServerStartEvent
 import build.buf.gen.simplecloud.controller.v1.ServerStopEvent
