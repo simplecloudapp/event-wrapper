@@ -73,8 +73,13 @@ subprojects {
         dependsOn("processResources")
         dependencies {
             include(project(":event-wrapper-shared"))
+            include(dependency("app.simplecloud.droplet.api:droplet-api"))
         }
         archiveFileName.set("${project.name}.jar")
+    }
+
+    tasks.shadowJar {
+        relocate("app.simplecloud.droplet", "app.simplecloud.relocate.droplet")
     }
 
     tasks.test {
