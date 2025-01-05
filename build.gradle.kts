@@ -8,16 +8,21 @@ plugins {
     `maven-publish`
 }
 
+val baseVersion = "0.0.1"
+val commitHash = System.getenv("COMMIT_HASH")
+val snapshotversion = "${baseVersion}-dev.$commitHash"
+
 allprojects {
     group = "app.simplecloud.event"
-    version = "0.0.1"
+    version = if (commitHash != null) snapshotversion else baseVersion
 
     repositories {
         mavenCentral()
-        mavenLocal()
         maven("https://buf.build/gen/maven")
+        maven("https://repo.simplecloud.app/snapshots/")
         maven("https://repo.papermc.io/repository/maven-public/")
         maven("https://oss.sonatype.org/content/repositories/snapshots")
+        maven("https://repo.simplecloud.app/snapshots")
     }
 }
 
@@ -68,8 +73,13 @@ subprojects {
         dependsOn("processResources")
         dependencies {
             include(project(":event-wrapper-shared"))
+            include(dependency("app.simplecloud.droplet.api:droplet-api"))
         }
         archiveFileName.set("${project.name}.jar")
+    }
+
+    tasks.shadowJar {
+        relocate("app.simplecloud.droplet", "app.simplecloud.relocate.droplet")
     }
 
     tasks.test {

@@ -5,10 +5,9 @@ import org.bukkit.plugin.java.JavaPlugin
 
 class PaperEventWrapperPlugin : JavaPlugin() {
 
-    private lateinit var wrapper: PaperEventWrapper
+    private val wrapper: PaperEventWrapper = PaperEventWrapper(Bukkit.getServer())
 
     override fun onEnable() {
-        wrapper = PaperEventWrapper(Bukkit.getServer())
         wrapper.initialize()
     }
 

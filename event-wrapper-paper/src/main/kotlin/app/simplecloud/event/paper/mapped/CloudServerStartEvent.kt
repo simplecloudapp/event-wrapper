@@ -2,7 +2,7 @@ package app.simplecloud.event.paper.mapped
 
 import CloudPaperEvent
 import app.simplecloud.controller.shared.server.Server
-import app.simplecloud.controller.shared.time.ProtoBufTimestamp
+import app.simplecloud.droplet.api.time.ProtobufTimestamp
 import app.simplecloud.event.shared.CloudServerStartEvent
 import build.buf.gen.simplecloud.controller.v1.ServerStartCause
 import build.buf.gen.simplecloud.controller.v1.ServerStartEvent
@@ -18,7 +18,7 @@ class CloudServerStartEvent(private val message: ServerStartEvent) : CloudPaperE
     }
 
     override fun getStartedAt(): LocalDateTime {
-        return ProtoBufTimestamp.toLocalDateTime(message.startedAt)
+        return ProtobufTimestamp.toLocalDateTime(message.startedAt)
     }
 
     override fun getPayload(): ServerStartEvent {

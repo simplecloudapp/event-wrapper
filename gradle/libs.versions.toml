@@ -3,7 +3,8 @@ kotlin = "2.0.20"
 shadow = "8.3.3"
 simplecloud-protospecs = "1.4.1.1.20241001163139.58018cb317ed"
 simplecloud-pubsub = "1.0.5"
-simplecloud-controller = "0.0.30-EXPERIMENTAL"
+simplecloud-controller = "0.0.30-dev.d45dc73"
+simplecloud-droplet-api = "0.0.1-dev.66efe83"
 velocity = "3.4.0-SNAPSHOT"
 bungeecord = "1.20-R0.2"
 paper = "1.21.1-R0.1-SNAPSHOT"
@@ -15,6 +16,7 @@ kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotl
 simplecloud-protospecs = { module = "build.buf.gen:simplecloud_proto-specs_grpc_kotlin", version.ref = "simplecloud-protospecs" }
 simplecloud-pubsub = { module = "app.simplecloud:simplecloud-pubsub", version.ref = "simplecloud-pubsub" }
 simplecloud-controller = { module = "app.simplecloud.controller:controller-shared", version.ref = "simplecloud-controller" }
+simplecloud-droplet-api = { module = "app.simplecloud.droplet.api:droplet-api", version.ref = "simplecloud-droplet-api" }
 velocity = { module = "com.velocitypowered:velocity-api", version.ref = "velocity"}
 bungeecord = { module = "net.md-5:bungeecord-api", version.ref = "bungeecord" }
 paper = { module = "io.papermc.paper:paper-api", version.ref = "paper"}
